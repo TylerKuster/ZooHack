@@ -7,6 +7,7 @@
 //
 
 #import "GimbalBeaconManager.h"
+#import "GimbalBeacon.h"
 
 @interface GimbalBeaconManager() {
     GMBLPlaceManager *placeManager;
@@ -84,19 +85,72 @@
     float yFloat = [yStr floatValue];
     
     GLKVector2 coordinates = GLKVector2Make(xFloat, yFloat);
-    Beacon* newBeacon = [Beacon new];
+    GimbalBeacon* newBeacon = [GimbalBeacon new];
     newBeacon.coordinates = coordinates;
     
     if(self.nearest == nil) {
         self.nearest = newBeacon;
     } else {
-        // compare self.nearest with newBeacon
-        float diff = GLKVector2Distance(self.nearest.coordinates, newBeacon.coordinates);
-        if(diff == 0.0f) {
-            // it is the same beacon
-        } else {
-            // it is a different beacon or beacon has moved
+        BOOL added = NO;
+        for (GimbalBeacon *gmblbeacon in self.beacons) {
+            if ([gmblbeacon.beaconId isEqual:newBeacon.beaconId]) {
+                added = YES;
+                NSUInteger index = [self.beacons indexOfObject:gmblbeacon];
+                [self.beacons replaceObjectAtIndex:index withObject:newBeacon];
+                break;
+            }
         }
+    }
+    
+    NSInteger minRSSI = -90;
+    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+    
+    for(int i = 0; i < self.beacons.count; i++){
+        GimbalBeacon *tempBeacon = [self.beacons objectAtIndex:i];
+        if(tempBeacon.rssi > minRSSI){
+            [tempArray addObject:tempBeacon];
+        }
+    }
+    
+    self.beacons = tempArray;
+    
+    if(self.beacons.count>0){
+        NSInteger maxRSSI = -550;
+        GimbalBeacon *nearestBeacon;
+        
+        
+        for (GimbalBeacon *beacon in self.beacons) {
+            if(beacon.rssi>maxRSSI){
+                maxRSSI = beacon.rssi;
+                nearestBeacon = beacon;
+            }
+        }
+        
+        if(nearestBeacon==nil){
+            if(self.beaconDelegate) {
+                if ([self.beaconDelegate respondsToSelector:@selector(setLatestPoint: fromBeacon:)]) {
+                    [self.beaconDelegate setLatestPoint:nearestBeacon.coordinates];
+                }
+            }
+            return;
+        }
+        
+        if ([self.nearest.beaconId isEqualToString:nearestBeacon.beaconId]){
+            // Found new nearest beacon
+            self.nearest = nearestBeacon;
+            if(self.beaconDelegate) {
+                if ([self.beaconDelegate respondsToSelector:@selector(setLatestPoint: fromBeacon:)]) {
+                    [self.beaconDelegate setLatestPoint:nearestBeacon.coordinates];
+                }
+            }
+        }
+        else{
+            // Found same beacon, updating the rssi values
+            self.nearest = nearestBeacon;
+        }
+        
+        newBeacon = nil;
+        nearestBeacon = nil;
     }
 }
 

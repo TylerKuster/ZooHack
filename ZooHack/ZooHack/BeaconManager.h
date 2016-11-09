@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreBluetooth/CoreBluetooth.h>
+#import <Gimbal/Gimbal.h>
+#import "BeaconDelegate.h"
 
-@interface BeaconManager : NSObject
+@protocol BeaconManagerDelegate <NSObject>
+-(void)updateLocation:(GLKVector2)point;
+-(void)getBluetoothStatus:(CBManagerState)bluetoothState;
+@end
+
+@interface BeaconManager : NSObject <GMBLPlaceManagerDelegate, BeaconDelegate, CBCentralManagerDelegate>
+
+@property (weak, nonatomic) id<BeaconManagerDelegate>delegate;
 
 @end
