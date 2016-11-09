@@ -15,8 +15,10 @@
 		79E410861DD3ABD200E881A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79E410841DD3ABD200E881A1 /* LaunchScreen.storyboard */; };
 		79E410911DD3ABD200E881A1 /* ZooHackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79E410901DD3ABD200E881A1 /* ZooHackTests.m */; };
 		79E4109C1DD3ABD200E881A1 /* ZooHackUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79E4109B1DD3ABD200E881A1 /* ZooHackUITests.m */; };
-		79E410B21DD3B1BC00E881A1 /* FlybitsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E410B01DD3B18100E881A1 /* FlybitsSDK.framework */; };
 		79E410B61DD3B32F00E881A1 /* MQTTFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E410B51DD3B32F00E881A1 /* MQTTFramework.framework */; };
+		79E410BC1DD3B53300E881A1 /* FlybitsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E410BB1DD3B53300E881A1 /* FlybitsSDK.framework */; };
+		79E410BE1DD3B54A00E881A1 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E410BD1DD3B54A00E881A1 /* Gimbal.framework */; };
+		79E410C01DD3B6BC00E881A1 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E410BF1DD3B6BC00E881A1 /* libz.1.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +55,10 @@
 		79E410971DD3ABD200E881A1 /* ZooHackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZooHackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E4109B1DD3ABD200E881A1 /* ZooHackUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZooHackUITests.m; sourceTree = "<group>"; };
 		79E4109D1DD3ABD200E881A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79E410B01DD3B18100E881A1 /* FlybitsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FlybitsSDK.framework; path = "../../../../Downloads/FlybitsSDK-Latest-Release-Xcode-7.3.1 2/FlybitsSDK.framework"; sourceTree = "<group>"; };
 		79E410B51DD3B32F00E881A1 /* MQTTFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MQTTFramework.framework; sourceTree = "<group>"; };
+		79E410BB1DD3B53300E881A1 /* FlybitsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FlybitsSDK.framework; sourceTree = "<group>"; };
+		79E410BD1DD3B54A00E881A1 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Gimbal.framework; sourceTree = "<group>"; };
+		79E410BF1DD3B6BC00E881A1 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +66,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79E410B21DD3B1BC00E881A1 /* FlybitsSDK.framework in Frameworks */,
+				79E410C01DD3B6BC00E881A1 /* libz.1.dylib in Frameworks */,
 				79E410B61DD3B32F00E881A1 /* MQTTFramework.framework in Frameworks */,
+				79E410BC1DD3B53300E881A1 /* FlybitsSDK.framework in Frameworks */,
+				79E410BE1DD3B54A00E881A1 /* Gimbal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,8 +156,10 @@
 		79E410A91DD3B0BB00E881A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79E410BF1DD3B6BC00E881A1 /* libz.1.dylib */,
+				79E410BD1DD3B54A00E881A1 /* Gimbal.framework */,
+				79E410BB1DD3B53300E881A1 /* FlybitsSDK.framework */,
 				79E410B51DD3B32F00E881A1 /* MQTTFramework.framework */,
-				79E410B01DD3B18100E881A1 /* FlybitsSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -446,6 +454,7 @@
 				DEVELOPMENT_TEAM = YHD42F5PMJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/**",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ZooHack/Info.plist;
@@ -462,6 +471,7 @@
 				DEVELOPMENT_TEAM = YHD42F5PMJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/**",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ZooHack/Info.plist;
