@@ -11,6 +11,6 @@
 
 @interface Beacon : NSObject
 
-@property GLKVector2 beaconLocation;
+@property GLKVector2 coordinates;
 
 @end
