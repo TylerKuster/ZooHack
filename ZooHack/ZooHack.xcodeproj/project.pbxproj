@@ -19,6 +19,13 @@
 		79E410BC1DD3B53300E881A1 /* FlybitsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E410BB1DD3B53300E881A1 /* FlybitsSDK.framework */; };
 		79E410BE1DD3B54A00E881A1 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E410BD1DD3B54A00E881A1 /* Gimbal.framework */; };
 		79E410C01DD3B6BC00E881A1 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E410BF1DD3B6BC00E881A1 /* libz.1.dylib */; };
+		C96F963C1DD3CA83007CE641 /* Beacon.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F963B1DD3CA83007CE641 /* Beacon.m */; };
+		C96F96421DD3CBCF007CE641 /* GimbalBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F96411DD3CBCF007CE641 /* GimbalBeaconManager.m */; };
+		C96F96431DD3CDE5007CE641 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E410BD1DD3B54A00E881A1 /* Gimbal.framework */; };
+		C96F96441DD3CDED007CE641 /* MQTTFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E410B51DD3B32F00E881A1 /* MQTTFramework.framework */; };
+		C96F96451DD3CDF0007CE641 /* FlybitsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E410BB1DD3B53300E881A1 /* FlybitsSDK.framework */; };
+		C993A24F1DD3C91500A88638 /* BeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C993A24E1DD3C91500A88638 /* BeaconManager.m */; };
+		C993A2531DD3C93D00A88638 /* GimbalBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = C993A2521DD3C93D00A88638 /* GimbalBeacon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +66,15 @@
 		79E410BB1DD3B53300E881A1 /* FlybitsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FlybitsSDK.framework; sourceTree = "<group>"; };
 		79E410BD1DD3B54A00E881A1 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Gimbal.framework; sourceTree = "<group>"; };
 		79E410BF1DD3B6BC00E881A1 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
+		C96F963A1DD3CA83007CE641 /* Beacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beacon.h; sourceTree = "<group>"; };
+		C96F963B1DD3CA83007CE641 /* Beacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Beacon.m; sourceTree = "<group>"; };
+		C96F963D1DD3CAFE007CE641 /* BeaconDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconDelegate.h; sourceTree = "<group>"; };
+		C96F96401DD3CBCF007CE641 /* GimbalBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GimbalBeaconManager.h; sourceTree = "<group>"; };
+		C96F96411DD3CBCF007CE641 /* GimbalBeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GimbalBeaconManager.m; sourceTree = "<group>"; };
+		C993A24D1DD3C91500A88638 /* BeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconManager.h; sourceTree = "<group>"; };
+		C993A24E1DD3C91500A88638 /* BeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconManager.m; sourceTree = "<group>"; };
+		C993A2511DD3C93D00A88638 /* GimbalBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GimbalBeacon.h; sourceTree = "<group>"; };
+		C993A2521DD3C93D00A88638 /* GimbalBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GimbalBeacon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +93,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96F96431DD3CDE5007CE641 /* Gimbal.framework in Frameworks */,
+				C96F96451DD3CDF0007CE641 /* FlybitsSDK.framework in Frameworks */,
+				C96F96441DD3CDED007CE641 /* MQTTFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +133,8 @@
 		79E410751DD3ABD200E881A1 /* ZooHack */ = {
 			isa = PBXGroup;
 			children = (
+				C96F96461DD3D1D2007CE641 /* Flybits */,
+				C993A2501DD3C92700A88638 /* BeaconManager */,
 				79E410791DD3ABD200E881A1 /* AppDelegate.h */,
 				79E4107A1DD3ABD200E881A1 /* AppDelegate.m */,
 				79E4107C1DD3ABD200E881A1 /* ViewController.h */,
@@ -162,6 +183,29 @@
 				79E410B51DD3B32F00E881A1 /* MQTTFramework.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C96F96461DD3D1D2007CE641 /* Flybits */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Flybits;
+			sourceTree = "<group>";
+		};
+		C993A2501DD3C92700A88638 /* BeaconManager */ = {
+			isa = PBXGroup;
+			children = (
+				C993A24D1DD3C91500A88638 /* BeaconManager.h */,
+				C993A24E1DD3C91500A88638 /* BeaconManager.m */,
+				C993A2511DD3C93D00A88638 /* GimbalBeacon.h */,
+				C993A2521DD3C93D00A88638 /* GimbalBeacon.m */,
+				C96F963A1DD3CA83007CE641 /* Beacon.h */,
+				C96F963B1DD3CA83007CE641 /* Beacon.m */,
+				C96F963D1DD3CAFE007CE641 /* BeaconDelegate.h */,
+				C96F96401DD3CBCF007CE641 /* GimbalBeaconManager.h */,
+				C96F96411DD3CBCF007CE641 /* GimbalBeaconManager.m */,
+			);
+			name = BeaconManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +275,7 @@
 				TargetAttributes = {
 					79E410721DD3ABD200E881A1 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = YHD42F5PMJ;
+						DevelopmentTeam = AVF4FWDUBC;
 						ProvisioningStyle = Automatic;
 					};
 					79E4108B1DD3ABD200E881A1 = {
@@ -301,6 +345,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				79E4107E1DD3ABD200E881A1 /* ViewController.m in Sources */,
+				C993A24F1DD3C91500A88638 /* BeaconManager.m in Sources */,
+				C96F96421DD3CBCF007CE641 /* GimbalBeaconManager.m in Sources */,
+				C993A2531DD3C93D00A88638 /* GimbalBeacon.m in Sources */,
+				C96F963C1DD3CA83007CE641 /* Beacon.m in Sources */,
 				79E4107B1DD3ABD200E881A1 /* AppDelegate.m in Sources */,
 				79E410781DD3ABD200E881A1 /* main.m in Sources */,
 			);
@@ -451,7 +499,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YHD42F5PMJ;
+				DEVELOPMENT_TEAM = AVF4FWDUBC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -468,7 +516,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = YHD42F5PMJ;
+				DEVELOPMENT_TEAM = AVF4FWDUBC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -486,6 +534,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = YHD42F5PMJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ZooHackTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TylerKuster.ZooHackTests;
@@ -499,6 +551,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = YHD42F5PMJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ZooHackTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TylerKuster.ZooHackTests;
